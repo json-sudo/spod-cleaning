@@ -1,0 +1,10 @@
+@import '../../base-scss/base-styles.scss';
+
+.hero {
+    position: relative;
+    @include widthAndHeight(100%, 100%);
+    overflow-x: hidden;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}

@@ -1,0 +1,67 @@
+@import '../../base-scss/base-styles.scss';
+
+.form-group {
+    width: 100%;
+    position: relative;
+}
+
+.form-input {
+    @include widthAndHeight(100%, 40px);
+    padding: 0.7em 1em;
+    border: none;
+    border-radius: 100px;
+    -webkit-appearance: none;
+    color: $text-colour;
+    font-family: inherit;
+    transition: box-shadow 300ms ease-out;
+    
+    &:focus ~ .form-input-label {
+        @include shrinkLabel($text-colour);
+
+        @media (max-width: 769px){
+            @include shrinkLabel($on-primary-colour);
+        }
+    }
+}
+
+.form-input-label {
+    color: lighten(black, 10%);
+    position: absolute;
+    left:  25px;
+    top: 20px;
+    transform: translateY(-50%);
+    transition: top 300ms ease, font-size 300ms ease;
+
+    span {
+        color: #ad0000;
+    }
+  
+    &.shrink {
+        @include shrinkLabel($on-secondary-colour);
+
+        @media (max-width: 769px){
+            @include shrinkLabel($on-primary-colour);
+        }
+    }
+}
+
+input[type='password'] {
+    letter-spacing: 0.3em;
+}
+
+textarea {
+    width: 100%;
+    background-color: darken(#fff, 5%);
+    border: none;
+    -webkit-appearance: none;
+    border-radius: 7px;
+    padding: 0.7em 1em;
+    color: $text-colour;
+    font-family: inherit;
+    font-size: 0.9em;
+    transition: box-shadow 300ms ease-out;
+
+    &:focus ~ .form-input-label {
+        @include shrinkLabel($text-colour);
+    }
+}

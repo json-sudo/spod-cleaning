@@ -1,0 +1,87 @@
+@import '../../base-scss/base-styles.scss';
+
+.contact-us-container {
+    margin-top: 55px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $big-screens){
+        grid-template-columns: 50% 50%;
+    }
+}
+
+.contact-form-wrapper {
+    background-color: #fff;
+    padding: 1.5rem 2rem 2.5rem;
+
+    @media (max-width: 769px){
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .contact-page-title {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    form {
+        width: 80%;
+        margin: 6% auto 0;
+
+        .form-group {
+            margin-bottom: 1.5rem;
+
+            textarea {
+                box-shadow: 0 0 3px 2px rgba(black, 0.2);
+
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 1px 5px 2px rgba($primary-colour, 0.8);
+                }
+                
+                &:focus ~ .form-input-label {
+                    @media (max-width: 769px){
+                        @include shrinkLabel($on-primary-colour);
+                    }
+                }
+            }
+        }
+
+        .form-input {
+            background-color: darken(#fff, 5%);
+            box-shadow: 0 0 3px 2px rgba(black, 0.2);
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 1px 5px 2px rgba($primary-colour, 0.8);
+            }
+        }
+
+        .primary {
+            padding: 1em 2em;
+            width: 100%;
+            border-radius: 100px;
+            box-shadow: 0 0 3px 2px rgba(black, 0.4);
+
+            &:focus {
+                outline: 1px solid $primary-colour;
+                box-shadow: 0 0 3px 2px rgba($primary-colour, 0.4);
+            }
+        }
+    }
+}
+
+#contact-us {
+    min-height: 90vh;
+    background-position: unset;
+    color: #fff;
+
+    @media (max-width: 769px), (min-height: $tall-screens){
+        min-height: 92vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}

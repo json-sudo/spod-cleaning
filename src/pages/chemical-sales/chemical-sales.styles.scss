@@ -1,0 +1,112 @@
+@import '../../base-scss/base-styles.scss';
+
+.chemical-sales-container {
+    margin-top: 55px;
+    
+}
+
+.chemical-sales {
+    height: 50vh;
+    position: relative;
+
+    @media (min-width: $big-screens){
+        height: 75vh;
+    }
+
+    .overlay {
+        @include widthAndHeight(100%, 100%);
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        background: linear-gradient(89deg, rgba(black, 0.4), rgba(black, 0.5));
+    }
+
+    img {
+        @include widthAndHeight(100%, 100%);
+        background-position: center;
+        object-fit: cover;
+    }
+
+    h1 {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0 5px 15px rgba(black, 0.6);
+
+        @media (min-width: $big-screens){
+            font-size: 1.5em;
+        }
+    }
+}
+
+.chemical-description {
+    width: 100%;
+    padding: 1em 2em;
+    background-color: #fff;
+
+    @media (min-width: $big-screens){
+        padding: 2rem;
+
+        p {
+            width: 60%;
+            margin: 3rem auto 0;
+        }
+    }
+
+    .link-button {
+        margin: 3rem auto;
+        width: 220px;
+        font-size: medium;
+    }
+}
+
+.chemicals-list {
+    h2 {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+    }
+}
+
+table.chemical-list {
+    width: 90%;
+    margin: 0 auto 3rem;
+    border: 3px solid $primary-colour;
+    background-color: $on-primary-colour;
+    text-align: center;
+
+    @media (min-width: $big-screens){
+        width: 54%;
+    }
+}
+
+table.chemical-list td, 
+table.chemical-list th {
+    border: 1px solid $secondary-colour;
+    padding: 3px 2px;
+}
+
+table.chemical-list thead {
+    background: $primary-colour;
+}
+
+table.chemical-list thead th {
+    font-weight: bold;
+    color: $on-primary-colour;
+    text-align: center;
+    border-left: 2px solid $secondary-colour;
+}
+
+table.chemical-list thead th:first-child {
+    border-left: none;
+}
+
+table.chemical-list tbody {
+    @media (max-width: 769px){
+        font-size: 1rem;
+    }
+}

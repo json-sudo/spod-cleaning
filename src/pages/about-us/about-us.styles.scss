@@ -1,0 +1,169 @@
+@import '../../base-scss/base-styles.scss';
+
+.about-us-container {
+    margin-top: 55px;
+    background-color: $secondary-colour;
+
+    @media (min-width: $big-screens){
+        background-color: unset;
+    }
+}
+
+.about-main-container {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 3rem 1.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 2px rgba(black, 0.4);
+
+    @media (min-width: $big-screens){
+        width: 80%;
+        box-shadow: unset;
+        z-index: 5;
+        height: 500px;
+    }
+
+    .about-desc-title {
+        font-size: larger;
+        text-transform: capitalize;
+        margin-bottom: 1.5rem;
+    }
+
+    .who-container {
+        width: 95%;
+        margin-bottom: 1.5rem;
+
+        @media (min-width: $big-screens){
+            position: absolute;
+            z-index: 30;
+            top: 8%;
+            left: 0;
+
+            .slant-bg {
+                width: 100%;
+                height: 27rem;
+                position: absolute;
+                z-index: 31;
+                background-color: $secondary-colour;
+                border-radius: 6px;
+                transform: rotate(1deg);
+
+                @media (min-width: 1020px){
+                    height: 23rem;
+                }
+            }
+
+            .about-desc-title {
+                position: absolute;
+                z-index: 35;
+                margin-top: 1.5rem;
+                transform: translateX(20%);
+                color: $on-secondary-colour;
+            }
+
+            .about-description {
+                max-width: 25rem;
+                width: 40%;
+                margin: 4.5rem 0 1.5rem 2rem;
+                position: absolute;
+                z-index: 35;
+                color: $on-secondary-colour;
+            }
+        }
+    }
+
+    .statement-container {
+
+        @media (min-width: $big-screens){
+            max-width: 45%;
+            position: absolute;
+            z-index: 32;
+            top: 0;
+            right: 8%;
+            background-color: $primary-colour;
+            color: $on-primary-colour;
+            border-radius: 6px;
+            padding: 2rem 1.5rem 1.5rem;
+            
+        }
+
+        .statement {
+            margin-bottom: 1.5rem;
+    
+            .about-description {
+                width: 97%;
+                margin: 0 auto;
+                text-align: center;
+                list-style: none;
+            }
+        }
+    }
+}
+
+.about-other-container {
+    padding: 3rem 2rem 2rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    background-color: darken(white, 8%);
+
+    .other-wrapper {
+
+        .about-desc-title {
+            font-size: larger;
+            text-transform: capitalize;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .about-description {
+            list-style: none;
+
+            ul {
+                list-style: inherit;
+            }
+        }
+    }
+}
+
+#about-us {
+    height: 50vh;
+    position: relative;
+
+    @media (min-width: $big-screens){
+        height: 75vh;
+    }
+
+    .overlay {
+        @include widthAndHeight(100%, 100%);
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        background: linear-gradient(89deg, rgba(black, 0.4), rgba(black, 0.5));
+    }
+
+    img {
+        @include widthAndHeight(100%, 100%);
+        background-position: center;
+        object-fit: cover;
+    }
+    
+    .about-title {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-transform: capitalize;
+        text-shadow: 0 5px 15px rgba(black, 0.6);
+
+        @media (min-width: $big-screens){
+            font-size: 1.5em;
+        }
+    }
+}

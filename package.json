@@ -1,13 +1,19 @@
 {
   "name": "spod",
   "version": "0.1.0",
+  "homepage": "http://spodintegrated-nigerialimited.com/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.20.0",
+    "cloudinary-core": "^2.10.3",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-responsive-carousel": "^3.2.9",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {

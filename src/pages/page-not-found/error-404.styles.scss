@@ -1,0 +1,27 @@
+@import '../../base-scss/base-styles.scss';
+
+.error-page-container {
+    margin-top: 55px;
+    display: grid;
+    place-items: center;
+    padding: 2em;
+
+    h1 {
+        margin-bottom: 1em;
+        font-size: 1.3em;
+    }
+
+    img {
+        width: auto;
+        height: 25vh;
+
+        @media (min-width: $big-screens){
+            width: auto;
+            height: 60vh;
+        }
+
+        @media (min-height: $tall-screens){
+            height: 20vh;
+        }
+    }
+}

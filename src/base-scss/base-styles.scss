@@ -1,0 +1,163 @@
+/* Colours */
+$primary-colour: #393c6c;
+$secondary-colour: #6c6939;
+
+// Text Colours
+$on-primary-colour: #fff;
+$on-secondary-colour: #fff;
+$text-colour: #0A0A0A;
+
+/* Font Family */
+// Variable font browser fallback (https://web.dev/variable-fonts/)
+
+// Heading Font-Family
+@supports (font-variation-settings: 'wght' 400) {
+    @font-face {
+        font-family: Roboto;
+        src: url('../assets/fonts/Roboto/RobotoSlab-VariableFont_wght.ttf');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: Roboto;
+        font-variation-settings: 'wght' 400;
+    }
+}
+
+// Body Text Font-Family
+@supports (font-variation-settings: 'wght' 300) {
+    @font-face {
+        font-family: 'Exo 2';
+        src: url('../assets/fonts/Exo2/Exo2-VariableFont_wght.ttf');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    body {
+        font-family: 'Exo 2';
+        font-variation-settings: 'wght' 300;
+        color: $text-colour;
+    }
+}
+
+/* Function(s) */
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+/* Mixins */
+@mixin elevateAndMove {
+    box-shadow: 0 0 7px 5px rgba(#555, 0.4);
+    transform: translate(1px, 3px);
+}
+
+@mixin centerHeading {
+    text-align: center;
+    font-weight: lighter;
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+  
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+@mixin linkButton {
+    @include widthAndHeight(160px, 40px);
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background-color: $primary-colour;
+    text-decoration: none;
+    color: $on-primary-colour;
+    transition: box-shadow 300ms ease-out;
+    cursor: pointer;
+}
+
+@mixin shrinkLabel($colour) {
+    top: -12px;
+    font-size: 16px;
+    color: $colour;
+}
+
+@mixin visuallyHidden {
+    position: absolute;
+    @include widthAndHeight(1px, 1px);
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* Support for IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+@mixin widthAndHeight($width, $height){
+    width: $width;
+    height: $height;
+}
+
+/* Font Sizes */
+$min_screen-width: 20em;
+$max_screen-width: 75em;
+$min_font: 1.17em;
+$max_font: 1.2em;
+$mod_1: 1.11; // mobile
+$mod_2: 1.18; // desktop
+
+/* Screen Sizes */
+$small-screens: 300px;
+$tall-screens: 750px;
+$big-screens: 770px;
+
+h1 {  
+    font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+    @include centerHeading; 
+    @include fluid-type($min_screen-width, $max_screen-width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h2 {  
+    font-size: $mod_1*$mod_1*$mod_1 *1rem;
+    @include centerHeading; 
+    @include fluid-type($min_screen-width, $max_screen-width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h3 { 
+    font-size: $mod_1*$mod_1 *1rem;
+    @include centerHeading; 
+    @include fluid-type($min_screen-width, $max_screen-width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
+
+body {
+    @include fluid-type($min_screen-width, $max_screen-width, $min_font, $max_font);
+}
+
+.link-button {
+    @include linkButton;
+
+    &:focus,
+    &:hover {
+        border: 2px solid darken($primary-colour, 10%);
+        outline: none;
+        box-shadow: 0 0 7px 3px $primary-colour;
+    }
+}

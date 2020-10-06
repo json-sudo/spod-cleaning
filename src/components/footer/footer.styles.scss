@@ -1,0 +1,75 @@
+@import '../../base-scss/base-styles.scss';
+
+.main-footer {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0A0A0A;
+
+    .footer-main-links {
+        width: 85%;
+        margin: 4rem 0 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media (min-width: $big-screens){
+            width: 90%;
+        }
+
+        .link-group {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+
+            @media (min-width: $big-screens){
+                width: 20%;
+            }
+
+            .link-group-header {
+                color: darken($secondary-colour, 3%);
+                margin: 0 0 1rem;
+            }
+
+            a,
+            span {
+                color: darken(white, 5%);
+                font-size: 0.85rem;
+                margin: 0 0 1rem;
+            }
+
+            a {
+                text-decoration: none;
+                transition: text-shadow 300ms ease-out, color 250ms ease-out;
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    text-shadow: 0 0 3px rgba($primary-colour, 0.4);
+                    color: $primary-colour;
+                }
+            }
+
+            .link-button {
+                width: 85%;
+                margin: auto 0;
+            }
+        }
+    }
+
+    .footer-division {
+        width: 80%;
+        border: 2px solid darken(white, 25%);
+        border-radius: 5px;
+    }
+
+    .footer-rights {
+        width: 80%;
+        margin: 2rem auto;
+        display: grid;
+        place-items: center;
+        color: darken(white, 5%);
+    }
+}

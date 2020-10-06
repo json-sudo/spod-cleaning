@@ -1,0 +1,42 @@
+@import '../../base-scss/base-styles.scss';
+
+.customButton {
+    padding: 0 1.5em;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.primary {
+    border: 1px solid $primary-colour;
+    background-color: $primary-colour;
+    color: $on-primary-colour;
+    transition: box-shadow 300ms ease-out, transform 300ms ease-out;
+
+    &:hover {
+        @include elevateAndMove;
+    }
+}
+
+.secondary {
+    border: 1px solid $secondary-colour;
+    background: linear-gradient(to right, $secondary-colour, lighten($secondary-colour, 10%));
+    color: $on-secondary-colour;
+    transition: box-shadow 300ms ease-out, transform 300ms ease-out;
+
+    &:hover {
+        @include elevateAndMove;
+    }
+}
+
+.transparent {
+    border: 1px solid $primary-colour;
+    background-color: transparent;
+    transition: box-shadow 300ms ease-out, transform 300ms ease-out;
+
+    &:hover {
+        @include elevateAndMove;
+    }
+}

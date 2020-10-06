@@ -1,0 +1,122 @@
+@import '../../base-scss/base-styles.scss';
+
+.main-header {
+    @include widthAndHeight(100%, 55px);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #fff;
+    box-shadow: 0 1px 4px 2px rgba(black, 0.2);
+
+    .hamburger-menu {
+        @media (min-width: $big-screens){
+            display: none;
+        }
+    }
+}
+
+.logo-container {
+    @include widthAndHeight(50%, 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @media (min-width: $big-screens){
+        width: 23%;
+    }
+
+    @media (max-width: 330px){
+        width: 60%;
+    }
+
+    @media (min-width: 500px) and (max-width: 769px){
+        width: 38%;
+    }
+
+    a {
+        width: 25px;
+        display: grid;
+        place-items: center;
+
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .logo-text,
+    .logo-text:visited {
+        width: 75%;
+        text-align: center;
+        text-decoration: none;
+        color: $primary-colour;
+    }
+}
+
+.visually-hidden {
+    @include visuallyHidden;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.main-header-nav {
+    width: 45%;
+
+    @media (max-width: 769px){
+        display: none;
+    }
+
+    @media (min-width: $big-screens) and (max-width: 850px){
+        width: 55%;
+    }
+
+    .main-header-wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+
+        a {
+            position: relative;
+            text-decoration: none;
+            color: darken($primary-colour, 5%);
+            transition: color 300ms ease-out;
+            outline: none;
+
+            &:focus {
+                text-shadow: 0 1px 5px rgba($primary-colour, 0.5);
+            }
+
+            &:hover,
+            &:focus {
+                color: $primary-colour;
+            }
+
+            &::after {
+                border-top: 2px solid darken($primary-colour, 5%);
+                border-radius: 2em;
+                content: "";
+                position: absolute;
+                right: 100%;
+                bottom: -0.14em;
+                left: 0;
+                transition: right 450ms cubic-bezier(0, 0.5, 0, 1);
+            }
+
+            &:hover::after,
+            &:focus::after {
+                right: 0;
+                border-color: $primary-colour;
+            }
+
+            &:visited {
+                color: $primary-colour;
+            }
+        }
+    }
+}

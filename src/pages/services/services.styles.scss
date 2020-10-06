@@ -1,0 +1,143 @@
+@import '../../base-scss/base-styles.scss';
+
+.services-page-container {
+    margin-top: 55px;
+    background-color: $secondary-colour;
+
+    .services-page-title {
+        margin: 1.5rem 0;
+        color: $on-secondary-colour;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        padding: 0 0.5em;
+        color: $on-secondary-colour;
+    }
+
+    .services-page-wrapper {
+        padding: 1em;
+
+        @media (min-width: $big-screens){
+            padding: 2em;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 3px 2px rgba(black, 0.4);
+
+            .service {
+                height: 520px;
+                margin-bottom: 1.5rem;
+                padding: 2rem 1.7rem 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                @media (max-width: 500px){
+                    padding: 0 1rem 2.5rem;
+                    height: 500px;
+
+                    &:first-of-type {
+                        padding: 2rem 2.5rem 2.5rem;
+                    }
+                }
+
+                .service-header {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                img {
+                    width: 200px;
+                    height: 150px;
+                    border-radius: 4px;
+                    border: 1px solid lavender;
+                    margin: auto;
+                    object-fit: cover;
+                }
+
+                h3 {
+                    font-size: 1.3em;
+                    margin: 0.5em 0 0;
+                }
+
+                .link-button {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .request-container {
+        padding: 3.5rem 0;
+        background-color: $primary-colour;
+        color: $on-primary-colour;
+        box-shadow: inset 0 0 5px 5px rgba(black, 0.35);
+
+        form {
+            width: 80%;
+            margin: 1.5rem auto 0;
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: 509px){
+                width: 85%;
+            }
+
+            @media (min-width: 900px){
+                width: 55%;
+            }
+
+            .form-grouper {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 8px;
+
+                @media (max-width: 499px){
+                    gap: 0;
+                }
+
+                @media (min-width: 630px){
+                    gap: 1.5rem;
+                }
+            }
+
+            .form-group {                
+                .form-input {
+                    margin-bottom: 1.5rem;
+                    border: 0.5px solid gray;
+                }
+
+                .form-input:focus ,
+                textarea:focus {
+                    outline: none;
+                    border: 1px solid $secondary-colour;
+                    box-shadow: 0 0 5px 2px $secondary-colour;
+
+                    & ~ .form-input-label {
+                        @include shrinkLabel($on-primary-colour);
+                    }
+                }
+            }
+
+            .secondary {
+                width: 80%;
+                align-self: center;
+                margin-top: 1.5rem;
+                padding: 1em 2em;
+                border-radius: 100px;
+                box-shadow: 0 0 3px 2px rgba(black, 0.4);
+
+                @media (min-width: $big-screens){
+                    width: 45%;
+                }
+            }
+        }
+    }
+}

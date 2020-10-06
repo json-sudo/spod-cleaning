@@ -1,0 +1,147 @@
+@import '../../base-scss/base-styles.scss';
+
+.equipment-rentals-container {
+    margin-top: 55px;
+
+    .equipment-description {
+        width: 100%;
+        padding: 1em 2em;
+        background-color: #fff;
+
+        @media (min-width: $big-screens){
+            padding: 2rem;
+
+            p {
+                width: 60%;
+                margin: 3rem auto 0;
+            }
+        }
+
+        .link-button {
+            margin: 3rem auto;
+            width: 220px;
+            font-size: medium;
+        }
+    }
+
+    .equipment-gallery {
+        padding: 5rem 0;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+        background-color: darken(#fff, 6%);
+
+        .row {
+            width: calc(85% + 20px);
+            margin: 15% 0 8%;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 0 0 50%;
+
+            @media (min-width: $big-screens){
+                width: calc(80% + 30px);
+                margin: 0 0 5%;
+            }
+
+            .img-container {
+                @include widthAndHeight(calc(50% - 10px), 220px);
+                display: flex;
+                flex-direction: column;
+                margin: 0 10px 10px 0;
+                border-radius: 5px;
+                border: 0.5px solid lavender;
+                box-shadow: 0 0 10px 3px rgba(black, 0.1);
+
+                @media (min-width: $big-screens){
+                    @include widthAndHeight(calc(25% - 10px), 250px);
+                    margin: 0 10px 0 0;
+                }
+
+                &:nth-of-type(2),
+                &:last-of-type {
+                    @media (max-width: 769px){
+                        margin: 0;
+                        width: 50%;
+                    }
+                }
+
+                &:last-of-type {                    
+                    @media (min-width: $big-screens){
+                        width: 25%;
+                        margin: 0;
+                    }
+                }
+
+                .img-title {
+                    @include widthAndHeight(100%, 25%);
+                    border-bottom-right-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    text-align: center;
+                    background-color: #fff;
+
+                    @media (min-width: $big-screens){
+                        @include widthAndHeight(100%, 20%);
+                        display: grid;
+                        place-items: center;
+                    }
+                }
+
+                img {
+                    @include widthAndHeight(100%, 75%);
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                    object-fit: cover;
+
+                    @media (min-width: $big-screens){
+                        @include widthAndHeight(100%, 80%);
+                    }
+                }
+            }
+        }
+
+        .link-button {
+            width: 220px;
+            font-size: medium;
+        }
+    }
+}
+
+#equipment-rentals {
+    height: 50vh;
+    position: relative;
+
+    @media (min-width: $big-screens){
+        height: 75vh;
+    }
+
+    .overlay {
+        @include widthAndHeight(100%, 100%);
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        background: linear-gradient(89deg, rgba(black, 0.4), rgba(black, 0.5));
+    }
+
+    img {
+        @include widthAndHeight(100%, 100%);
+        background-position: center;
+        object-fit: cover;
+    }
+    
+    h1 {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 0 5px 15px rgba(black, 0.6);
+
+        @media (min-width: $big-screens){
+            font-size: 1.5em;
+        }
+    }
+}
