@@ -53,7 +53,7 @@
                 transform: rotate(1deg);
 
                 @media (min-width: 1020px){
-                    height: 23rem;
+                    height: 25rem;
                 }
             }
 
@@ -107,6 +107,7 @@
 .about-other-container {
     padding: 3rem 2rem 2rem 3rem;
     display: grid;
+    gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     background-color: darken(white, 8%);
 

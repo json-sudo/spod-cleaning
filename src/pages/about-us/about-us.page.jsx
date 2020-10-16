@@ -25,8 +25,8 @@ const AboutUsPage = () => {
                     <p className="about-description">
                         Spod Integrated Nigeria Limited is a fully Nigerian company incorporated under the Nigerian law 
                         and has its head office at No 2 Command Estate off Okporo Road, Rumuodara, 
-                        Port Harcourt, Rivers State, Nigeria. Our branch office is at No 10 
-                        Ayo Babatunde Crescent, Oniru Market Lekki Phase 1, Lagos and Block E6, Flat 1, FCDA 
+                        Port Harcourt, Rivers State, Nigeria. <br /><br />Our branch office is at <br />Lagos: No 10 
+                        Ayo Babatunde Crescent, Oniru Market Lekki Phase 1, Lagos and<br /><br /> Abuja: Block E6, Flat 1, FCDA 
                         Quarters, Kubwa, Abuja FCT.
                     </p>
                 </section>
@@ -61,7 +61,7 @@ const AboutUsPage = () => {
                 <div className="other-wrapper">
                     <h2 className="about-desc-title">Our capabilities</h2>
 
-                    <p className="about-description">
+                    <div className="about-description">
                         <b style={{ color: '#000' }}>
                             The company is reputable for service <br /> delivery in the following major areas:
                         </b>
@@ -75,7 +75,7 @@ const AboutUsPage = () => {
                             <li>Sales of industrial chemicals</li>
                             <li>Local &amp; foreign procurement</li>
                         </ul>
-                    </p>
+                    </div>
                 </div>
 
                 <div className="other-wrapper">

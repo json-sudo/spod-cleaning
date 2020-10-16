@@ -53,7 +53,7 @@ const EquipmentRentalsPage = () => {
 
                     <div className="img-container">
                         <img 
-                            src="https://res.cloudinary.com/dynamicjson/image/upload/w_auto,q_40,c_scale/v1599311178/mud-pump_ayxtun.jpg" 
+                            src="https://res.cloudinary.com/dynamicjson/image/upload/w_auto,c_scale/v1602344306/mud-pumps_gzgglr.jpg" 
                             alt="Mud pump"
                             loading="lazy"
                         />

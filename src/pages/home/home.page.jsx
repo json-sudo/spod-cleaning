@@ -212,7 +212,7 @@ const HomePage = () => {
                     
                     <div className="writeup">
                         <p>
-                            We are consistently minimizing our your cost through introduction of 
+                            We are consistently minimizing your cost through introduction of 
                             commercial principles with greater attention to your satisfaction.
                         </p>
 

@@ -176,7 +176,7 @@ class ServicesPage extends React.Component {
                                 id="phoneNum"
                                 label="Phone Number"
                                 value={phoneNum}
-                                type="number"
+                                type="tel"
                                 onChange={handleInputChange}
                             />
                         </div>

@@ -31,9 +31,9 @@
             box-shadow: 0 0 3px 2px rgba(black, 0.4);
 
             .service {
-                height: 520px;
+                height: 480px;
                 margin-bottom: 1.5rem;
-                padding: 2rem 1.7rem 0;
+                padding: 2rem 1.7rem 1.5rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -132,7 +132,7 @@
                 margin-top: 1.5rem;
                 padding: 1em 2em;
                 border-radius: 100px;
-                box-shadow: 0 0 3px 2px rgba(black, 0.4);
+                box-shadow: 0 0 3px 2px rgba(#111, 0.3), 0 0 5px 5px rgba(black, 0.2), 0 0 5px 5px rgba(black, 0.1);
 
                 @media (min-width: $big-screens){
                     width: 45%;
