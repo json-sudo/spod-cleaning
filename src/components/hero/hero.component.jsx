@@ -5,7 +5,7 @@ import './hero.styles.scss'
 const Hero = ({ imageUrl, children, page,...otherProps }) => {
     return (
         <div
-            style={{backgroundImage: `linear-gradient(89deg, rgba(0,0,0, 0.5), rgba(0,0,0, 0.4)), url(${imageUrl})`}}
+            style={{backgroundImage: `linear-gradient(89deg, rgba(0,0,0, 0.8), rgba(0,0,0, 0.7)), url(${imageUrl})`}}
             id={page}
             {...otherProps}
             className="hero cld-reponsive"

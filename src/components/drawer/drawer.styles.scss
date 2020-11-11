@@ -7,12 +7,9 @@
     top: 0;
     right: 0;
     z-index: 101;
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: #fff;
-    transform: scale(0, 0);
-    transform-origin: 100% 0;
-    transition: transform 300ms ease-out;
     box-shadow: -2px 1px 5px 3px rgba(black, 0.3);
 
     .drawer-header {
@@ -66,5 +63,5 @@
 }
 
 .open {
-    transform: scale(1, 1);
+    display: flex;
 }

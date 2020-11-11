@@ -127,7 +127,7 @@ const HomePage = () => {
                                 <img 
                                     className="service-image" 
                                     src="https://res.cloudinary.com/dynamicjson/image/upload/c_scale,q_20,w_auto/v1596140434/domestic-cleaning_hkgjhg.jpg" 
-                                    alt="Industrial janitor equipment."
+                                    alt="A mop bucket with cleaning materials"
                                 />
                             </picture>
                         </div>

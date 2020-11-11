@@ -141,7 +141,7 @@
         }
 
         .info-wrapper-text {
-            text-align: justify;
+            text-align: left;
             padding: 0 3em;
 
             @media (max-width: 769px){
@@ -262,7 +262,7 @@
             text-align: left;
 
             @media (min-width: 470px){
-                text-align: justify;
+                text-align: left;
             }
 
             @media (min-width: $big-screens){

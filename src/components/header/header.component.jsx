@@ -11,12 +11,11 @@ const Header = () => {
     return (
         <header className="main-header">
             <div className="logo-container">
-                <Link to="/">
+                <div className="logo-wrapper">
                     <img src={imgPathContext('./logo.png')} alt="Spod Intgrated" className="logo" />
-                    <span className="visually-hidden">Click to go the homepage</span>
-                </Link>
+                </div>
 
-                <Link to="/" className="logo-text">Spod Integrated</Link>
+                <span className="logo-text">Spod Integrated</span>
             </div>
 
             <div className="spacer" />

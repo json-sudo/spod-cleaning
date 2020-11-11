@@ -1,5 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import FacebookIcon from '../../assets/svg-components/facebook.icon'
+
+import InstagramIcon from '../../assets/svg-components/instagram.icon'
+import TwitterIcon from '../../assets/svg-components/twitter.icon'
 
 import './footer.styles.scss'
 
@@ -41,7 +45,32 @@ const Footer = () => {
                     <span>2 Command Estate Off Okporo, Rumuodara, Port Harcourt</span>
                 </nav>
 
-                <div className="link-group">
+                <nav className="link-group">
+                    <header className="link-group-header">Our Socials</header>
+
+                    <a
+                        href="https://twitter.com/SpodLtd"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <TwitterIcon id="twitter-icon" title="Connect with us on Twitter"/>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/leesi.isaiah/"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <InstagramIcon title="Connect with us on Instagram" />
+                    </a>
+
+                    <a
+                        href="https://www.facebook.com/spinltd"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        <FacebookIcon title="Connect with us on facebook" />
+                    </a>
                     <span 
                         className="link-button" 
                         onClick={() => requestService()}
@@ -50,7 +79,7 @@ const Footer = () => {
                     >
                         Request service
                     </span>
-                </div>
+                </nav>
             </div>
 
             <hr className="footer-division"/>
