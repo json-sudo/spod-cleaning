@@ -7,9 +7,10 @@
     top: 0;
     right: 0;
     z-index: 101;
-    display: none;
     flex-direction: column;
     background-color: #fff;
+    transition: opacity 300ms ease-in-out, transform 300ms ease-out;
+    transform-origin: 100% 0;
     box-shadow: -2px 1px 5px 3px rgba(black, 0.3);
 
     .drawer-header {
@@ -23,7 +24,7 @@
             color: $secondary-colour;
             font-size: 1.1em;
         }
-    
+
         .close-btn {
             width: 20%;
             border: none;
@@ -62,6 +63,20 @@
     }
 }
 
-.open {
+.drawer-container-exited {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.drawer-container-entering,
+.drawer-container-exiting {
+    opacity: 0.1;
+    transform: scale(0.25);
+}
+
+.drawer-container-entered {
     display: flex;
+    opacity: 1;
+    transform: scale(1);
 }
